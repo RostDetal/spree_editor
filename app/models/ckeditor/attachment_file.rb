@@ -1,5 +1,6 @@
 class Ckeditor::AttachmentFile < Ckeditor::Asset
   has_attached_file :data
+  do_not_validate_attachment_file_type :data
 
   Ckeditor::AttachmentFile.attachment_definitions[:data][:path] = '/:class/:id/:style/:basename.:extension'
   Ckeditor::AttachmentFile.attachment_definitions[:data][:url] = '/:class/:id/:style/:basename.:extension'
